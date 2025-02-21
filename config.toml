@@ -1,0 +1,64 @@
+concurrent = 1
+check_interval = 0
+connection_max_age = "15m0s"
+shutdown_timeout = 0
+
+[session_server]
+  session_timeout = 1800
+
+[[runners]]
+  name = "dind runner by me"
+  url = "http://192.168.1.21:9999/"
+  id = 4
+  token = "t3_-gb5KyiQKaassiBBPHQv"
+  token_obtained_at = 2025-02-20T22:18:48Z
+  token_expires_at = 0001-01-01T00:00:00Z
+  executor = "docker"
+  pre_build_script = "export DOCKER_HOST=tcp://docker:2375"
+  environment = ["DOCKER_DRIVER=overlay2", "DOCKER_TLS_CERTDIR="]
+  [runners.cache]
+    MaxUploadedArchiveSize = 0
+    [runners.cache.s3]
+    [runners.cache.gcs]
+    [runners.cache.azure]
+  [runners.docker]
+    tls_verify = false
+    tls_cert_path = ""
+    image = "docker:latest"
+    privileged = true
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = ["/cache"]
+    shm_size = 0
+    network_mtu = 0
+
+[[runners]]
+  name = "вш"
+  url = "http://192.168.1.21:9999/"
+  id = 6
+  token = "t3_u9v4BvMdpHWs8QzwWZ_6"
+  token_obtained_at = 2025-02-20T22:35:30Z
+  token_expires_at = 0001-01-01T00:00:00Z
+  executor = "docker"
+
+  pre_build_script = "export DOCKER_HOST=tcp://docker:2375"
+  environment = ["DOCKER_DRIVER=overlay2", "DOCKER_TLS_CERTDIR="]
+
+  [runners.cache]
+    MaxUploadedArchiveSize = 0
+    [runners.cache.s3]
+    [runners.cache.gcs]
+    [runners.cache.azure]
+  [runners.docker]
+    tls_verify = false
+    tls_cert_path = ""
+    image = "docker:latest"
+    privileged = true
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = ["/cache"]
+    shm_size = 0
+    network_mtu = 0
+
