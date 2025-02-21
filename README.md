@@ -1,7 +1,9 @@
 ```
 mv config.toml /etc/gitlab-runner/config.toml
 ```
-
+```
+rm config.toml
+```
 ```
 docker-compose up -d
 ```
